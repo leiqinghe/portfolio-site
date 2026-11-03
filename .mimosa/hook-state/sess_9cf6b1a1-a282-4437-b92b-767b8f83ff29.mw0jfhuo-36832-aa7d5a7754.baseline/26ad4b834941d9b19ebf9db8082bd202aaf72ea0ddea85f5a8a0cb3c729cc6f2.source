@@ -70,24 +70,15 @@ function useReveal() {
   }, []);
 }
 
-function LogoMark({ size = 30 }: { size?: number }) {
+function LogoMark({ size = 38 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32">
-          <stop offset="0" stopColor="#6366f1" />
-          <stop offset="1" stopColor="#a855f7" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M17.8 3.5 L7.2 17.5 h6.3 L11.8 28.5 L24.8 13.5 h-6.6 z"
-        fill="url(#logo-grad)"
-        stroke="url(#logo-grad)"
-        strokeWidth="3.4"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-      />
-    </svg>
+    <img
+      src={`${import.meta.env.BASE_URL}assets/logo.png`}
+      alt="leiqinghe.cloud logo"
+      width={size}
+      height={size}
+      className="mix-blend-multiply"
+    />
   );
 }
 
@@ -141,11 +132,16 @@ function WindowFrame({ alt, url }: { alt: string; url: string }) {
 function Phone({ img, alt, className = "" }: { img: string; alt: string; className?: string }) {
   return (
     <div
-      className={`overflow-hidden rounded-[36px] border-[7px] border-[#1c1c24] bg-[#1c1c24] shadow-[0_24px_60px_-16px_rgba(0,0,0,0.45)] ${className}`}
+      className={`overflow-hidden rounded-[42px] border-[8px] border-[#1c1c24] bg-[#1c1c24] shadow-[0_28px_70px_-18px_rgba(0,0,0,0.5)] ${className}`}
     >
-      <div className="relative">
-        <span className="absolute left-1/2 top-2 z-10 h-[18px] w-[74px] -translate-x-1/2 rounded-full bg-[#1c1c24]" />
-        <img src={img} alt={alt} className="block w-full" loading="lazy" />
+      <div className="relative" style={{ aspectRatio: "9 / 18.5" }}>
+        <span className="absolute left-1/2 top-2.5 z-10 h-[16px] w-[68px] -translate-x-1/2 rounded-full bg-[#1c1c24]" />
+        <img
+          src={img}
+          alt={alt}
+          className="absolute inset-0 h-full w-full object-cover object-top"
+          loading="lazy"
+        />
       </div>
     </div>
   );
@@ -155,9 +151,9 @@ function PhoneShowcase() {
   const base = `${import.meta.env.BASE_URL}assets/phones`;
   return (
     <div className="animate-float flex items-start justify-center">
-      <Phone img={`${base}/aigen.png`} alt="AI 生图工作台移动端" className="z-0 hidden w-[200px] -rotate-[8deg] translate-y-10 -mr-8 sm:block" />
-      <Phone img={`${base}/devtools.png`} alt="DevTools 移动端" className="z-10 w-[240px]" />
-      <Phone img={`${base}/reader.png`} alt="在线阅读器移动端" className="z-0 hidden w-[200px] rotate-[8deg] translate-y-10 -ml-8 sm:block" />
+      <Phone img={`${base}/aigen.png`} alt="AI 生图工作台移动端" className="z-0 hidden w-[215px] -rotate-[8deg] translate-y-14 -mr-9 sm:block" />
+      <Phone img={`${base}/devtools.png`} alt="DevTools 移动端" className="z-10 w-[262px]" />
+      <Phone img={`${base}/reader.png`} alt="在线阅读器移动端" className="z-0 hidden w-[215px] rotate-[8deg] translate-y-14 -ml-9 sm:block" />
     </div>
   );
 }

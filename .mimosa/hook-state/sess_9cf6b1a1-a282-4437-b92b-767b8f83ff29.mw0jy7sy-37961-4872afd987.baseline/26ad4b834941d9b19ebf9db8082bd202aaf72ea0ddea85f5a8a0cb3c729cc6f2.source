@@ -133,7 +133,7 @@ function Phone({ img, alt, className = "" }: { img: string; alt: string; classNa
     <div
       className={`overflow-hidden rounded-[42px] border-[8px] border-[#1c1c24] bg-[#1c1c24] shadow-[0_28px_70px_-18px_rgba(0,0,0,0.5)] ${className}`}
     >
-      <div className="relative" style={{ aspectRatio: "9 / 18.5" }}>
+      <div className="relative" style={{ aspectRatio: "9 / 16.5" }}>
         <span className="absolute left-1/2 top-2.5 z-10 h-[16px] w-[68px] -translate-x-1/2 rounded-full bg-[#1c1c24]" />
         <img
           src={img}
@@ -150,9 +150,9 @@ function PhoneShowcase() {
   const base = `${import.meta.env.BASE_URL}assets/phones`;
   return (
     <div className="animate-float flex items-start justify-center">
-      <Phone img={`${base}/aigen.png`} alt="AI 生图工作台移动端" className="z-0 hidden w-[215px] -rotate-[8deg] translate-y-14 -mr-9 sm:block" />
-      <Phone img={`${base}/devtools.png`} alt="DevTools 移动端" className="z-10 w-[262px]" />
-      <Phone img={`${base}/reader.png`} alt="在线阅读器移动端" className="z-0 hidden w-[215px] rotate-[8deg] translate-y-14 -ml-9 sm:block" />
+      <Phone img={`${base}/aigen.png`} alt="AI 生图工作台移动端" className="z-0 hidden w-[200px] -rotate-[8deg] translate-y-12 -mr-8 sm:block" />
+      <Phone img={`${base}/devtools.png`} alt="DevTools 移动端" className="z-10 w-[244px]" />
+      <Phone img={`${base}/reader.png`} alt="在线阅读器移动端" className="z-0 hidden w-[200px] rotate-[8deg] translate-y-12 -ml-8 sm:block" />
     </div>
   );
 }
@@ -172,7 +172,7 @@ function Hero() {
           className="reveal mx-auto mt-6 max-w-xl text-lg text-zinc-500"
           style={{ transitionDelay: "160ms" }}
         >
-          你好，我是雷庆贺。从定制化网站系统、 APP 、小程序、AI 应用到自部署服务，
+          从定制化网站系统、 APP 、小程序、AI 应用到自部署服务，
           享受从 0 到 1 的完整构建 —— 设计、开发、部署、运营，一个人可运维的产品线。
         </p>
         <div className="reveal mt-9 flex justify-center gap-4" style={{ transitionDelay: "240ms" }}>

@@ -133,7 +133,7 @@ function Phone({ img, alt, className = "" }: { img: string; alt: string; classNa
     <div
       className={`overflow-hidden rounded-[42px] border-[8px] border-[#1c1c24] bg-[#1c1c24] shadow-[0_28px_70px_-18px_rgba(0,0,0,0.5)] ${className}`}
     >
-      <div className="relative" style={{ aspectRatio: "9 / 16.5" }}>
+      <div className="relative" style={{ aspectRatio: "9 / 18.5" }}>
         <span className="absolute left-1/2 top-2.5 z-10 h-[16px] w-[68px] -translate-x-1/2 rounded-full bg-[#1c1c24]" />
         <img
           src={img}

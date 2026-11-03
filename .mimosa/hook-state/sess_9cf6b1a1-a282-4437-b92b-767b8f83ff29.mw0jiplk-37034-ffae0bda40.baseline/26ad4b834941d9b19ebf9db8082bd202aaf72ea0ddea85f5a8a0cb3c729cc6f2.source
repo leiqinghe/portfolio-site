@@ -132,17 +132,19 @@ function WindowFrame({ alt, url }: { alt: string; url: string }) {
 function Phone({ img, alt, className = "" }: { img: string; alt: string; className?: string }) {
   return (
     <div
-      className={`overflow-hidden rounded-[42px] border-[8px] border-[#1c1c24] bg-[#1c1c24] shadow-[0_28px_70px_-18px_rgba(0,0,0,0.5)] ${className}`}
+      className={`rounded-[42px] border-[8px] border-[#1c1c24] bg-[#1c1c24] shadow-[0_28px_70px_-18px_rgba(0,0,0,0.5)] ${className}`}
     >
-      <div className="relative" style={{ aspectRatio: "9 / 18.5" }}>
-        <span className="absolute left-1/2 top-2.5 z-10 h-[16px] w-[68px] -translate-x-1/2 rounded-full bg-[#1c1c24]" />
-        <img
-          src={img}
-          alt={alt}
-          className="absolute inset-0 h-full w-full object-cover object-top"
-          loading="lazy"
-        />
+      {/* 额头：打孔与听筒（不遮挡屏幕内容） */}
+      <div className="flex h-[32px] items-center justify-center gap-3 bg-[#1c1c24]">
+        <span className="h-[14px] w-[58px] rounded-full bg-[#0a0a12]" />
+        <span className="h-[8px] w-[8px] rounded-full bg-[#0a0a12]" />
       </div>
+      {/* 屏幕：完整显示 UI，不裁剪 */}
+      <div className="overflow-hidden rounded-[26px]">
+        <img src={img} alt={alt} className="block w-full" loading="lazy" />
+      </div>
+      {/* 下巴 */}
+      <div className="h-[24px] bg-[#1c1c24]" />
     </div>
   );
 }

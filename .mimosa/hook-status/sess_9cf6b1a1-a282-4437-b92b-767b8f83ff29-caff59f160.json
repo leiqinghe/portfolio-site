@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-11-03T09:37:10.882Z",
+  "sessionId": "sess_9cf6b1a1-a282-4437-b92b-767b8f83ff29",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "/Users/leiqinghe/Documents/code/leiqinghe/devtools/.gitignore",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 1,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

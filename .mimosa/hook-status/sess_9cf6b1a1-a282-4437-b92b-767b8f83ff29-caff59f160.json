@@ -1,9 +1,9 @@
 {
   "schemaVersion": "mimosa-hook-status/v1",
-  "recordedAt": "2026-11-03T10:47:39.866Z",
+  "recordedAt": "2026-11-03T10:57:06.057Z",
   "sessionId": "sess_9cf6b1a1-a282-4437-b92b-767b8f83ff29",
   "event": "PostToolUse",
-  "toolName": "Write",
+  "toolName": "Edit",
   "file": "/tmp/portfolio-assets/normalize-phone.py",
   "outcome": "inconclusive",
   "coverage": "partial",

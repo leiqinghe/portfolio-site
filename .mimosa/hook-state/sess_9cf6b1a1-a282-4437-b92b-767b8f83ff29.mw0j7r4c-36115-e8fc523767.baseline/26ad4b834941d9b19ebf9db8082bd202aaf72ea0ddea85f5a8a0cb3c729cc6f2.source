@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const iconUrl = (name: string) => `${import.meta.env.BASE_URL}assets/icons/${name}.png`;
 
@@ -70,33 +70,54 @@ function useReveal() {
   }, []);
 }
 
+function LogoMark({ size = 30 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32">
+          <stop offset="0" stopColor="#6366f1" />
+          <stop offset="1" stopColor="#a855f7" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M17.8 3.5 L7.2 17.5 h6.3 L11.8 28.5 L24.8 13.5 h-6.6 z"
+        fill="url(#logo-grad)"
+        stroke="url(#logo-grad)"
+        strokeWidth="3.4"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-100 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="#top" className="flex items-center gap-2.5 font-medium">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 text-white">
-            雷
-          </span>
+        <a href="#top" className="flex items-center gap-2 font-medium">
+          <LogoMark />
           <span>leiqinghe.cloud</span>
         </a>
-        <nav className="hidden items-center gap-8 text-sm text-zinc-500 md:flex">
-          <a href="#projects" className="transition hover:text-zinc-900">
-            项目
+        <div className="flex items-center gap-8">
+          <nav className="hidden items-center gap-8 text-sm text-zinc-500 md:flex">
+            <a href="#projects" className="transition hover:text-zinc-900">
+              项目
+            </a>
+            <a href="#stack" className="transition hover:text-zinc-900">
+              技术
+            </a>
+            <a href="#contact" className="transition hover:text-zinc-900">
+              联系
+            </a>
+          </nav>
+          <a
+            href="#contact"
+            className="rounded-full bg-zinc-900 px-5 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
+          >
+            联系我
           </a>
-          <a href="#stack" className="transition hover:text-zinc-900">
-            技术
-          </a>
-          <a href="#contact" className="transition hover:text-zinc-900">
-            联系
-          </a>
-        </nav>
-        <a
-          href="#contact"
-          className="rounded-full bg-zinc-900 px-5 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
-        >
-          联系我
-        </a>
+        </div>
       </div>
     </header>
   );
@@ -117,16 +138,34 @@ function WindowFrame({ alt, url }: { alt: string; url: string }) {
   );
 }
 
+function Phone({ img, alt, className = "" }: { img: string; alt: string; className?: string }) {
+  return (
+    <div
+      className={`overflow-hidden rounded-[36px] border-[7px] border-[#1c1c24] bg-[#1c1c24] shadow-[0_24px_60px_-16px_rgba(0,0,0,0.45)] ${className}`}
+    >
+      <div className="relative">
+        <span className="absolute left-1/2 top-2 z-10 h-[18px] w-[74px] -translate-x-1/2 rounded-full bg-[#1c1c24]" />
+        <img src={img} alt={alt} className="block w-full" loading="lazy" />
+      </div>
+    </div>
+  );
+}
+
+function PhoneShowcase() {
+  const base = `${import.meta.env.BASE_URL}assets/phones`;
+  return (
+    <div className="animate-float flex items-start justify-center">
+      <Phone img={`${base}/aigen.png`} alt="AI 生图工作台移动端" className="z-0 hidden w-[200px] -rotate-[8deg] translate-y-10 -mr-8 sm:block" />
+      <Phone img={`${base}/devtools.png`} alt="DevTools 移动端" className="z-10 w-[240px]" />
+      <Phone img={`${base}/reader.png`} alt="在线阅读器移动端" className="z-0 hidden w-[200px] rotate-[8deg] translate-y-10 -ml-8 sm:block" />
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section id="top" className="hero-aurora">
       <div className="mx-auto max-w-6xl px-6 pb-20 pt-24 text-center md:pt-32">
-        <div className="reveal mb-6 flex items-center justify-center gap-2.5">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 text-sm text-white shadow-md shadow-indigo-200">
-            雷
-          </span>
-          <span className="text-sm font-medium tracking-widest text-indigo-500">独立开发者</span>
-        </div>
         <h1 className="reveal text-5xl leading-[1.15] font-semibold tracking-tight md:text-7xl" style={{ transitionDelay: "80ms" }}>
           把想法做成
           <br />
@@ -138,8 +177,8 @@ function Hero() {
           className="reveal mx-auto mt-6 max-w-xl text-lg text-zinc-500"
           style={{ transitionDelay: "160ms" }}
         >
-          你好，我是雷庆贺。从在线工具、AI 应用到自部署服务，
-          享受从 0 到 1 的完整构建 —— 设计、开发、部署、运营，一个人的产品线。
+          你好，我是雷庆贺。从定制化网站系统、 APP 、小程序、AI 应用到自部署服务，
+          享受从 0 到 1 的完整构建 —— 设计、开发、部署、运营，一个人可运维的产品线。
         </p>
         <div className="reveal mt-9 flex justify-center gap-4" style={{ transitionDelay: "240ms" }}>
           <a
@@ -156,9 +195,7 @@ function Hero() {
           </a>
         </div>
         <div className="reveal mt-16" style={{ transitionDelay: "300ms" }}>
-          <div className="animate-float">
-            <WindowFrame alt="DevTools 开发者工具集界面" url="leiqinghe.cloud:8100" />
-          </div>
+          <PhoneShowcase />
         </div>
       </div>
     </section>
@@ -365,6 +402,16 @@ function TechStack() {
 }
 
 function Contact() {
+  const [copied, setCopied] = useState(false);
+  const copyWechat = async () => {
+    try {
+      await navigator.clipboard.writeText("qqqqqinghe");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    } catch {
+      prompt("全选并复制微信号：", "qqqqqinghe");
+    }
+  };
   return (
     <section id="contact" className="bg-white">
       <div className="mx-auto max-w-6xl px-6 py-24 text-center">
@@ -382,13 +429,15 @@ function Contact() {
             >
               GitHub
             </a>
-            <a
-              href="mailto:hello@leiqinghe.cloud"
+            <button
+              type="button"
+              onClick={copyWechat}
               className="rounded-full border border-zinc-300 px-7 py-3 text-sm font-medium text-zinc-700 transition hover:border-zinc-400 hover:text-zinc-900"
             >
-              hello@leiqinghe.cloud
-            </a>
+              {copied ? "已复制 ✓" : "微信号：qqqqqinghe"}
+            </button>
           </div>
+          <p className="mt-4 text-xs text-zinc-400">点击微信号自动复制</p>
         </div>
       </div>
     </section>

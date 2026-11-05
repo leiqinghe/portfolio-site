@@ -442,26 +442,26 @@ function Contact() {
 function Footer() {
   return (
     <footer className="border-t border-zinc-100">
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-10 text-sm text-zinc-400">
-        <div className="flex flex-wrap items-center justify-between gap-4">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-400">
+        <span className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <span>© 2026 雷庆贺 · 用代码把想法变成现实</span>
-          <span className="flex gap-5">
-            <a href="https://tools.leiqinghe.cloud" target="_blank" rel="noreferrer" className="transition hover:text-zinc-700">
-              DevTools
-            </a>
-            <a href="https://github.com/leiqinghe" target="_blank" rel="noreferrer" className="transition hover:text-zinc-700">
-              GitHub
-            </a>
-          </span>
-        </div>
-        <a
-          href="https://beian.miit.gov.cn/"
-          target="_blank"
-          rel="noreferrer"
-          className="transition hover:text-zinc-700"
-        >
-          豫ICP备2026032934号
-        </a>
+          <a
+            href="https://beian.miit.gov.cn/"
+            target="_blank"
+            rel="noreferrer"
+            className="transition hover:text-zinc-700"
+          >
+            豫ICP备2026032934号
+          </a>
+        </span>
+        <span className="flex gap-5">
+          <a href="https://tools.leiqinghe.cloud" target="_blank" rel="noreferrer" className="transition hover:text-zinc-700">
+            DevTools
+          </a>
+          <a href="https://github.com/leiqinghe" target="_blank" rel="noreferrer" className="transition hover:text-zinc-700">
+            GitHub
+          </a>
+        </span>
       </div>
     </footer>
   );

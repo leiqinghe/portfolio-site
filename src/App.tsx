@@ -8,7 +8,7 @@ const PROJECTS = [
     name: "DevTools 开发者工具集",
     desc: "30+ 免费在线工具：时间戳、二维码、图片处理、AI 生图等，打开即用、无需注册。从零设计并持续迭代的前端工程。",
     tags: ["React", "TypeScript", "Ant Design", "Docker"],
-    link: "https://leiqinghe.cloud:8100",
+    link: "https://tools.leiqinghe.cloud",
     linkLabel: "访问",
     featured: true,
   },
@@ -17,7 +17,7 @@ const PROJECTS = [
     name: "AI 生图工作台",
     desc: "文生图 + 图生图双模式，接入 GPT-Image 模型。内置出站安全守卫、限流与 HTTPS 自动续期。",
     tags: ["OpenAI API", "Express", "Nginx"],
-    link: "https://leiqinghe.cloud:8100/image-gen",
+    link: "https://tools.leiqinghe.cloud/image-gen",
     linkLabel: "体验",
   },
   {
@@ -161,7 +161,7 @@ function Hero() {
   return (
     <section id="top" className="hero-aurora">
       <div className="mx-auto max-w-6xl px-6 pb-20 pt-24 text-center md:pt-32">
-        <h1 className="reveal text-5xl leading-[1.15] font-semibold tracking-tight md:text-7xl" style={{ transitionDelay: "80ms" }}>
+        <h1 className="hero-title reveal text-5xl leading-[1.15] font-semibold tracking-tight md:text-7xl" style={{ transitionDelay: "80ms" }}>
           把想法做成
           <br />
           <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-sky-500 bg-clip-text text-transparent">
@@ -238,7 +238,7 @@ function FocusProject() {
             ))}
           </div>
           <a
-            href="https://leiqinghe.cloud:8100"
+            href="https://tools.leiqinghe.cloud"
             target="_blank"
             rel="noreferrer"
             className="mt-8 inline-block rounded-full bg-white px-7 py-3 text-sm font-medium text-zinc-900 transition hover:bg-zinc-200"
@@ -247,7 +247,7 @@ function FocusProject() {
           </a>
         </div>
         <div className="reveal mt-14">
-          <WindowFrame alt="DevTools 工具集首页" url="leiqinghe.cloud:8100" />
+          <WindowFrame alt="DevTools 工具集首页" url="tools.leiqinghe.cloud" />
         </div>
       </div>
     </section>
@@ -445,7 +445,7 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 text-sm text-zinc-400">
         <span>© 2026 雷庆贺 · 用代码把想法变成现实</span>
         <span className="flex gap-5">
-          <a href="https://leiqinghe.cloud:8100" target="_blank" rel="noreferrer" className="transition hover:text-zinc-700">
+          <a href="https://tools.leiqinghe.cloud" target="_blank" rel="noreferrer" className="transition hover:text-zinc-700">
             DevTools
           </a>
           <a href="https://github.com/leiqinghe" target="_blank" rel="noreferrer" className="transition hover:text-zinc-700">

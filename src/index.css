@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+/* 首页大标题字体：MiSans Semibold，按标题字符子集化，仅 2KB */
+@font-face {
+  font-family: "MiSans Hero";
+  src: url("./fonts/misans-subset.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: block;
+}
+
+.hero-title {
+  font-family: "MiSans Hero", -apple-system, "PingFang SC", "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+
 /* 覆盖 Tailwind v4 默认 OKLCH 色板为 hex，兼容不支持 oklch() 的旧内核浏览器 */
 @theme {
   --color-zinc-50: #fafafa;
